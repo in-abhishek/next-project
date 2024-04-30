@@ -18,7 +18,7 @@ export default function Home() {
     const Values = Value(formData)
     if (Values) {
       const { name, email } = formData;
-      axios.post(`http://localhost:3000/api/user`, {
+      axios.post(`${process.env.BACKEND_API}/user`, {
         mathod: "Post",
         body: JSON.stringify(
           {
