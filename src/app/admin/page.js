@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Edit from './Edit'
 import Delete from './Delete'
 import axios from 'axios'
-const page = () => {
+const Page = () => {
     const [data, setData] = useState();
     const [show,setShow] = useState(false);
 
@@ -52,4 +52,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
