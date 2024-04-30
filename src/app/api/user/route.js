@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import { MongoClient } from 'mongodb';
+const express = require("express");
 const mongoose = require('mongoose');
 const cors = require('cors');
 const ObjectId = require('mongodb').ObjectId;
 mongoose.connect(process.env.MONGODB_URI);
+const app = express();
 app.use(cors())
 export async function GET(request) {
     if (request.method === 'GET') {
