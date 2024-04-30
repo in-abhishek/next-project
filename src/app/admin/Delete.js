@@ -7,7 +7,7 @@ const Delete = (props) => {
   const { id,setShow,show } = props;
   const handleClickDelete = async (userId) => {
     console.log("userId->>>", userId);
-    const resp = await fetch(`${process.env.BACKEND_API}/user`, {
+    const resp = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/user`, {
       method: 'DELETE',
       body: JSON.stringify({
         _id: userId

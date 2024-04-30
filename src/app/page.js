@@ -8,6 +8,9 @@ export default function Home() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
+
+  console.log("hiii");
+  console.log("process.env.BACKEND_API->>>>",process.env.NEXT_PUBLIC_BACKEND_API)
   const Value = (formDatas) => {
     const FormFields = Object.values(formDatas);
     return FormFields.every(field => field !== '');
@@ -18,7 +21,7 @@ export default function Home() {
     const Values = Value(formData)
     if (Values) {
       const { name, email } = formData;
-      axios.post(`${process.env.BACKEND_API}/user`, {
+      axios.post(`${process.env.NEXT_PUBLIC_BACKEND_API}/user`, {
         mathod: "Post",
         body: JSON.stringify(
           {

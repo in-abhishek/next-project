@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ProductList = async () => {
-    const data = await fetch('http://localhost:3000/api/user')
+    const data = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/user`)
     const response = await data.json();
     console.log("response>>>>", response)
     return response;

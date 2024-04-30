@@ -8,7 +8,7 @@ const Page = () => {
     const [show,setShow] = useState(false);
 
     useEffect(() => {
-        axios.get(`${process.env.BACKEND_API}/user`).then(response => {
+        axios.get(`${process.env.NEXT_PUBLIC_BACKEND_API}/user`).then(response => {
             setData(response.data);
             console.log("response-<<<", response.data.data);
         })
