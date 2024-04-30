@@ -43,11 +43,13 @@ export async function POST(request) {
             const collection = database.collection('userFormData');
             const user_email = await collection.findOne({ email: email });
             console.log("user_email->>.",user_email);
-            if(user_email){
-                return NextResponse.json({ message: 'Data Already existed!' });
+            if(email === 'abc@gmail.com'){
+                // return NextResponse.json({ message: 'Data Already existed!' });
+                // await collection.insertOne({ name: name, email: email, status: status });
+                return NextResponse.json({ message: 'Data saved successfully!' });
             }
-            await collection.insertOne({ name: name, email: email, status: status });
-            return NextResponse.json({ message: 'Data saved successfully!' });
+            // await collection.insertOne({ name: name, email: email, status: status });
+            // return NextResponse.json({ message: 'Data saved successfully!' });
 
         } catch (error) {
 
