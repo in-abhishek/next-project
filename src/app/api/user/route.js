@@ -7,27 +7,26 @@ const ObjectId = require('mongodb').ObjectId;
 mongoose.connect(process.env.MONGODB_URI);
 const app = express();
 app.use(cors())
-export async function GET(request) {
-    return NextResponse.json("hello world");
-}
 // export async function GET(request) {
-//     if (request.method === 'GET') {
-//         const client = new MongoClient(process.env.MONGODB_URI);
-//         try {
-//             await client.connect();
-//             const database = client.db('adminData');
-//             const data = await database.collection("userFormData").find({}).toArray();
-//             // console.log("data->>",data)
-//             return NextResponse.json({ data: data, status: 201 });
-
-//         } catch (error) {
-
-//             console.log("error->>>", error)
-//             return NextResponse.json({ message: 'Something went wrong!' });
-//         }
-//     }
-
+//     return NextResponse.json("hello world");
 // }
+export async function GET(request) {
+    if (request.method === 'GET') {
+        const client = new MongoClient(process.env.MONGODB_URI);
+        try {
+            await client.connect();
+            const database = client.db('adminData');
+            const data = await database.collection("userFormData").find({}).toArray();
+            // console.log("data->>",data)
+            return NextResponse.json({ data: data, status: 201 });
+
+        } catch (error) {
+            console.log("error->>>", error)
+            return NextResponse.json({ message: 'Something went wrong!' });
+        }
+    }
+
+}
 
 // post api
 export async function POST(request) {
@@ -44,12 +43,10 @@ export async function POST(request) {
             const user_email = await collection.findOne({ email: email });
             console.log("user_email->>.",user_email);
             if(email === 'abc@gmail.com'){
-                // return NextResponse.json({ message: 'Data Already existed!' });
-                // await collection.insertOne({ name: name, email: email, status: status });
-                return NextResponse.json({ message: 'Data saved successfully!' });
+                return NextResponse.json({ message: 'Data Already existed!' });
             }
-            // await collection.insertOne({ name: name, email: email, status: status });
-            // return NextResponse.json({ message: 'Data saved successfully!' });
+            await collection.insertOne({ name: name, email: email, status: status });
+            return NextResponse.json({ message: 'Data saved successfully!' });
 
         } catch (error) {
 
