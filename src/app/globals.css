@@ -1,0 +1,141 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style-type: none;
+}
+
+body{
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1200px;
+}
+.nav-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
+
+.all-product{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -15px;
+  flex-flow: row wrap;
+}
+.product{
+  flex-basis: 32%;
+  padding-left: 15px;
+  margin: .4rem;
+}
+.single-product{
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: .8rem;
+  cursor: pointer;
+}
+.product-image{
+  position: relative;
+}
+.product-image img{
+  width: 100%;
+  height: 350px;
+}
+.loading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+}
+
+.ratings{
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  color: #fff;
+  padding: .4rem;
+  border-radius: 50%;
+}
+.product-content h3{
+  font-size: 1.3rem;
+}
+.product-rating{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header{
+  padding: .6rem;
+  text-align: center;
+  background-color: #f0f0f0;
+  color: #040404;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.edit-Btn{
+  padding: .3rem .4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+.delete-btn{
+  margin-left: 1rem;
+}
+.navlinks span{
+  margin: auto .4rem;
+}
+
+/* -----------------form-data------------------ */
+.form-data{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #040404;
+  color: #fff;
+  padding: 1rem;
+}
+.form-data input{
+  background: transparent;
+  outline: none;
+  padding: .4rem;
+  color: #fff;
+}
+
+.form-data .row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .6rem .3rem;
+}
+.form-data .row button{
+  width: 100%;
+  padding: .4rem;
+  cursor: pointer;
+}
+.add_disabled{
+  background-color: #ad642f;
+}
