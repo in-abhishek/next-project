@@ -7,7 +7,7 @@ const Edit = (props) => {
   const { id,status,setShow ,show} = props;
   const handleClickEdit = (userId) => {
     console.log("userId->>>", userId);
-    axios.put(`${process.env.BACKEND_API}/user`, {
+    axios.put(`${process.env.NEXT_PUBLIC_BACKEND_API}/user`, {
       mathod: "Put",
       body: { _id: userId }
     }).then(response => {
