@@ -6,9 +6,7 @@ const cors = require('cors');
 const ObjectId = require('mongodb').ObjectId;
 mongoose.connect(process.env.MONGODB_URI);
 const app = express();
-app.use(cors({
-    origin: 'https://abhishek.vercel.app'
-}))
+app.use(cors())
 export async function GET(request) {
     if (request.method === 'GET') {
         const client = new MongoClient(process.env.MONGODB_URI);
