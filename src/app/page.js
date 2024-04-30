@@ -10,7 +10,7 @@ export default function Home() {
 
 
   console.log("hiii");
-  console.log("process.env.BACKEND_API->>>>",process.env.NEXT_PUBLIC_BACKEND_API)
+  console.log("process.env.NEXT_AUTH_URL->>>>",process.env.NEXT_AUTH_URL)
   const Value = (formDatas) => {
     const FormFields = Object.values(formDatas);
     return FormFields.every(field => field !== '');
